@@ -23,7 +23,7 @@ def return_text():
     num_predict = model2.predict(array).flatten()
 
     result = {
-        'prediction': num_predict[0]
+        'prediction': str(num_predict[0])
     }
     
     # result = {
