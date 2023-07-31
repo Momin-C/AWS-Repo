@@ -8,7 +8,7 @@ app = Flask(__name__)
 @app.route('/predict', methods=['GET'])
 def return_text():
 
-    model2 = load_model('model2/')
+    model2 = load_model('bloodGlucoseModel/')
 
     num1 = float(request.args.get('num1', 0))
     num2 = float(request.args.get('num2', 0))
@@ -23,7 +23,7 @@ def return_text():
     num_predict = model2.predict(array).flatten()
 
     result = {
-        'prediction': str(num_predict[0])
+        'prediction': str(round(num_predict[0],2))
     }
     
     # result = {
