@@ -5,11 +5,11 @@ app = Flask(__name__)
 
 @app.route('/predict', methods=['GET'])
 def return_text():
-    num1 = float(request.args.get('num1', 0)) + 1
-    num2 = float(request.args.get('num2', 0)) + 1
-    num3 = float(request.args.get('num3', 0)) + 1
-    num4 = float(request.args.get('num4', 0)) + 1
-    num5 = float(request.args.get('num5', 0)) + 1
+    num1 = float(request.args.get('num1', 0)) 
+    num2 = float(request.args.get('num2', 0))
+    num3 = float(request.args.get('num3', 0))
+    num4 = float(request.args.get('num4', 0))
+    num5 = float(request.args.get('num5', 0))
 
     arr = np.array([num1,num2,num3,num4,num5])
     array = np.reshape(arr,(1,5,1,1))
@@ -18,11 +18,7 @@ def return_text():
     print(array)
     
     result = {
-        'num1': num1,
-        'num2': num2,
-        'num3': num3,
-        'num4': num4,
-        'num5': num5
+        'prediction': str(round(num1+num2+num3+num4+num5,2))
     }
     
     return jsonify(result)
