@@ -5,7 +5,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 def return_text():
 
     model2 = load_model('model2/')

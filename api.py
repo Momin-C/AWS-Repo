@@ -3,7 +3,7 @@ import numpy as np
 
 app = Flask(__name__)
 
-@app.route('/predict', methods=['POST'])
+@app.route('/predict', methods=['GET'])
 def return_text():
     num1 = float(request.args.get('num1', 0)) + 1
     num2 = float(request.args.get('num2', 0)) + 1
